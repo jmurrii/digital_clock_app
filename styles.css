@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  background-color: rgba(222, 123, 123, 0.445);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 100px;
+}
+
+.clock-container {
+  font-size: 2rem;
+  margin-bottom: 100px;
+}
+
+.date-container {
+  font-size: 1.5rem;
+}
