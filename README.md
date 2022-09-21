@@ -5,7 +5,7 @@
 
 View the application [here](https://jmurrii.github.io/digital_clock_app/)
 
-And here is a screenshot
+
 ![My Image](assets/digital_clock_screenshot.png)
 
 ## Summary
