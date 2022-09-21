@@ -5,44 +5,56 @@ let d = new Date();
 // let time = new Date();
 
 
-// One function to get the time and display it
 
-function currentTime() {
-    let time = new Date()
 
-    // workout hours
+let time = new Date();
+
+function currentHour() {
     let hours = time.getHours();
-
     if (hours > 12) {
-        hours = hours - 12;
+        return hours = hours - 12;
     } else if (hours == 0) {
-        hours = 12;
+        return hours = 12;
     }
+}
 
-    // if (hours < 10) {
-    //     hours = `0${hours}`;
-    // }
 
+
+let currentMinute = () => {
     let minutes = time.getMinutes();
     if (minutes < 10) {
-        minutes = `0${minutes}`;
+        return minutes = `0${minutes}`;
+    } else {
+        return minutes;
     }
+}
 
+
+
+let currentSecond = () => {
     let seconds = time.getSeconds();
     if (seconds < 10) {
-        seconds = `0${seconds}`
-    }
-    let theTimeisNow = hours + ":" + minutes + ":" + seconds;
-    console.log(theTimeisNow);
-    if (time.getHours() >= 12) {
-        theTimeisNow = theTimeisNow + "pm";
+        return seconds = `0${seconds}`
     } else {
-        theTimeisNow = theTimeisNow + "am";
+        return seconds;
     }
+}
 
-    return document.getElementById('clock').innerHTML = theTimeisNow;
+
+let amOrPm = () => {
+    if (time.getHours() >= 12) {
+        return "pm";
+    } else {
+        return "am";
+    }
+}
 
 
+
+
+let currentTime = () => {
+    time = new Date();
+    return document.getElementById('clock').innerHTML = `${currentHour()}:${currentMinute()}:${currentSecond()} ${amOrPm()}`;
 }
 
 setInterval(currentTime, 1000);
@@ -58,24 +70,32 @@ setInterval(currentTime, 1000);
 
 
 // Code to display day, date, month, year
-
-let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
-let currentDay = dayNames[d.getDay()];
+// Function to retrieve day-name
 
 
+let currentDay = () => {
 
-// Code to change abbreviated month name to full month name
-let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-let currentMonth = monthNames[d.getMonth()];
+    let day = dayNames[d.getDay()];
+    return day;
+}
+
+
+// Function to change abbreviated month name to full month name
+
+let currentMonth = () => {
+
+    let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let month = monthNames[d.getMonth()];
+    return month;
+}
 
 
 
-
+// Function to append letters to date number
 
 let currentDate = d.getDate();
-
 function dateAppender(currentDate) {
 
     if (currentDate === 1 || currentDate === 21 || currentDate === 31) {
@@ -90,10 +110,14 @@ function dateAppender(currentDate) {
 }
 
 
-let currentYear = d.getFullYear();
+let currentYear = () => d.getFullYear();
 
 
 
+let todaysDate = () => {
 
-document.getElementById("date").innerHTML = currentDay + ", " + currentMonth + " " + dateAppender(currentDate) + " " + currentYear;
+    return document.getElementById("date").innerHTML = currentDay() + ", " + currentMonth() + " " + dateAppender(currentDate) + " " + currentYear();
 
+}
+
+todaysDate();
