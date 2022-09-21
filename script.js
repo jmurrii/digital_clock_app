@@ -1,16 +1,7 @@
 let d = new Date();
 
-// code to display time
-
-// let time = new Date();
-
-
-
-
-let time = new Date();
-
 function currentHour() {
-    let hours = time.getHours();
+    let hours = d.getHours();
     if (hours > 12) {
         return hours = hours - 12;
     } else if (hours == 0) {
@@ -21,7 +12,7 @@ function currentHour() {
 
 
 let currentMinute = () => {
-    let minutes = time.getMinutes();
+    let minutes = d.getMinutes();
     if (minutes < 10) {
         return minutes = `0${minutes}`;
     } else {
@@ -30,9 +21,8 @@ let currentMinute = () => {
 }
 
 
-
 let currentSecond = () => {
-    let seconds = time.getSeconds();
+    let seconds = d.getSeconds();
     if (seconds < 10) {
         return seconds = `0${seconds}`
     } else {
@@ -42,7 +32,7 @@ let currentSecond = () => {
 
 
 let amOrPm = () => {
-    if (time.getHours() >= 12) {
+    if (d.getHours() >= 12) {
         return "pm";
     } else {
         return "am";
@@ -50,28 +40,17 @@ let amOrPm = () => {
 }
 
 
-
-
 let currentTime = () => {
-    time = new Date();
+    d = new Date();
     return document.getElementById('clock').innerHTML = `${currentHour()}:${currentMinute()}:${currentSecond()} ${amOrPm()}`;
 }
 
 setInterval(currentTime, 1000);
 
 
-
-
-
-
-
-
-
-
-
+// ************************************************ //
 // Code to display day, date, month, year
 // Function to retrieve day-name
-
 
 let currentDay = () => {
 
@@ -109,15 +88,14 @@ function dateAppender(currentDate) {
     }
 }
 
-
+// Function to return current year
 let currentYear = () => d.getFullYear();
 
 
+// Call all functions and inject them into HTML document
 
 let todaysDate = () => {
-
     return document.getElementById("date").innerHTML = currentDay() + ", " + currentMonth() + " " + dateAppender(currentDate) + " " + currentYear();
-
 }
 
 todaysDate();
