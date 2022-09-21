@@ -11,7 +11,7 @@ View the application [here](https://jmurrii.github.io/digital_clock_app/)
 ## Summary
 In the third exercise of Andy Sterkowitz' Software Development Mastermind Program, I was given the task of creating a digital clock application.
 The project required me to research and understand JavaScript's Date Object.
-Initially I had built one gigantic function that did everything - but I learned that good practice is to break down the functionality
+Initially I had built one 'mega' function that did everything - but I learned that good practice is to break down the functionality
 into smaller more manageable functions.
 I also learned more about CSS and experimented with linear gradient to get a cool backdrop colour scheme.
 
