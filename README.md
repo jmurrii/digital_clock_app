@@ -3,8 +3,9 @@
  A simple digital clock displaying the time and date
  Languages Used:  HTML / CSS / JavaScript
 
-View it [here](https://jmurrii.github.io/digital_clock_app/)
+View the application [here](https://jmurrii.github.io/digital_clock_app/)
 
+And here is a screenshot
 ![My Image](assets/digital_clock_screenshot.png)
 
 ## Summary
