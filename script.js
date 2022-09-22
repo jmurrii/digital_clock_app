@@ -47,10 +47,12 @@ let amOrPm = () => {
 
 let currentTime = () => {
     d = new Date();
-    return document.getElementById('clock').innerHTML = `${currentHour()}:${currentMinute()}:${currentSecond()} ${amOrPm()}`;
+    return document.getElementById('clock').innerHTML = `
+    ${currentHour()}:${currentMinute()}:${currentSecond()}<span> ${amOrPm()}</span>`;
 }
 
 setInterval(currentTime, 1000);
+
 
 
 // ************************************************ //
