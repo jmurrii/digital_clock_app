@@ -4,11 +4,12 @@ function currentHour() {
     let hours = d.getHours();
     if (hours > 12) {
         return hours = hours - 12;
-    } else if (hours == 0) {
-        return hours = 12;
+    } else if (hours < 10) {
+        return `0${hours}`;
+    } else {
+        return hours;
     }
 }
-
 
 
 let currentMinute = () => {
