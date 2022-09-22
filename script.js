@@ -6,6 +6,8 @@ function currentHour() {
         return hours = hours - 12;
     } else if (hours < 10) {
         return `0${hours}`;
+    } else if (hours == 0) {
+        return 12;
     } else {
         return hours;
     }
@@ -35,6 +37,8 @@ let currentSecond = () => {
 let amOrPm = () => {
     if (d.getHours() >= 12) {
         return "pm";
+    } else if (d.getHours() == 0) {
+        return "am";
     } else {
         return "am";
     }
