@@ -30,16 +30,15 @@ h1 {
   margin-bottom: 100px;
   letter-spacing: 0.3rem;
   width: 25%;
-  position: relative;
+  display: flex;
 }
 
-/* span created to address clock wobbling with the changing of the seconds.
- Created in the currentTime function of the js file.
-  Also serves to have more control over letter spacing of AM and PM */
-span {
-  position: absolute;
-  left: 168px;
-  letter-spacing: 0rem;
+#clock {
+  min-width: 180px;
+}
+
+#am-pm {
+  letter-spacing: 0.5px;
 }
 
 .date-container {
